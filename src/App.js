@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
+import NavBar from './components/NavBar';
+
+const estilos = {
+  backgroundColor: 'blue',
+  color: 'white'
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1>Curso de React</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+
+      <h3>Aqui se mostraran fotos y descripciones breves de los productos</h3>
     </div>
   );
 }
