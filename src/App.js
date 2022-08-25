@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import NavBar from './components/NavBar';
-import Contador from './components/Contador';
+import ItemCount from './components/ItemCount';
 import ItemListContainer from './components/ItemListContainer';
 
 const estilos = {
@@ -12,15 +12,19 @@ const estilos = {
 const agregarProducto = (cant) => {
   console.log(`Agregar ${cant} de producto al carrito`);
 }
+const titulo = "Aquí se observaran los diferentes productos que se ofrezcan en la pagina";
+
 
 function App() {
   return (
     <div className="App">
       <NavBar />
 
-      <ItemListContainer />
+      <ItemListContainer
+        titulo = {titulo}
+      />
       <hr />
-      <Contador 
+      <ItemCount 
         stock = {7}
         initial = {1}
         agregarProducto = {agregarProducto}

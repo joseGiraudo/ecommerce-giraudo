@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Contador = ({stock, initial, agregarProducto}) => {
+const ItemCount = ({stock, initial, agregarProducto}) => {
     const [ contador, setContador ] = useState(initial);
 
     const sumarClick = () => {
@@ -25,4 +25,4 @@ const Contador = ({stock, initial, agregarProducto}) => {
     )
 }
 
-export default Contador;
+export default ItemCount;
