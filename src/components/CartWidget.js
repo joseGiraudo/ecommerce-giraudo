@@ -3,7 +3,7 @@ import { BsCart2 } from 'react-icons/bs';
 
 const CartWidget = () => {
   return (
-    <div><BsCart2 /></div>
+    <BsCart2 />
   )
 }
 

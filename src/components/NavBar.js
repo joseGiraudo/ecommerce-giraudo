@@ -31,7 +31,7 @@ const NavBar = () => {
         </ul>
       </div>
       
-      <button className="btn btn-sm btn-outline-secondary my-2 my-sm-0" type='button'  >
+      <button className="btn btn-info" type='button'  >
           <CartWidget />
       </button>
     </nav>
