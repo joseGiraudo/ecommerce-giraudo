@@ -21,19 +21,18 @@ const ItemList = ({itemList}) => {
     <>
 
       {
-        loading ? <h3>Cargando...</h3>
+        loading ? <h3>cargando...</h3>
         :
         // hay que mapear la lista de items a mostrar
         // y mostrar un componente Item por cada uno
         
         <div className="card-group">
-          {data.map(data => {
-            console.log(data);
+          {data.map(data => (
             <Item
               key= {data.id}
               data = {data}
             />
-          })}
+          ))}
         </div>
       }
     </>

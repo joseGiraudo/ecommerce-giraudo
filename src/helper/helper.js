@@ -19,6 +19,27 @@ const products = [
         price : 150,
         image : "image url",
         description : "This is a short description"
+    },
+    {
+        id : 4,
+        title : "Object 4 title",
+        price : 1200,
+        image : "image url",
+        description : "This is a short description"
+    },
+    {
+        id : 5,
+        title : "Object 5 title",
+        price : 475,
+        image : "image url",
+        description : "This is a short description"
+    },
+    {
+        id : 6,
+        title : "Object 6 title",
+        price : 550,
+        image : "image url",
+        description : "This is a short description"
     }
 ];
 
