@@ -5,8 +5,7 @@ const ItemListContainer = ({titulo}) => {
   return (
     <>
       <h2>{titulo}</h2>
-      <h4>Luego se iran cargando los productos</h4>
-      
+      <hr />
       <ItemList />
     </>
   )
