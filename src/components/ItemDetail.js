@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import ItemCount from './ItemCount';
 
 const ItemDetail = ({ item }) => {
 
-
   const {id, title, price, image, description} = item;
+
+  const agregarProducto = (cant) => {
+    console.log(`Agregar ${cant} de producto al carrito`);
+  }
 
   return (
     <>
@@ -13,7 +17,6 @@ const ItemDetail = ({ item }) => {
             <div class="card">
               <div class="card-body">
                 <img className="card-img-top h-auto" src={image} alt="Card image cap" />
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
@@ -23,6 +26,11 @@ const ItemDetail = ({ item }) => {
                 <h5 class="card-title">{title}</h5>
                 <p class="card-text">{description}</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
+                <ItemCount 
+                  stock = {7}
+                  initial = {1}
+                  agregarProducto = {agregarProducto}
+                />
               </div>
             </div>
           </div>
