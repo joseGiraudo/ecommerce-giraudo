@@ -1,21 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Item from './Item';
-import getData from '../helper/helper';
 
-const ItemList = ({itemList}) => {
+const ItemList = ({ loading, data }) => {
 
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    getData.then(data => {
-      setData(data)
-      setLoading(false)
-    })
-  }, [])
-
-  // cuando traigo la data de los items, el loading pasa a false y se muestran los items
-    
   return (
     
     <>
