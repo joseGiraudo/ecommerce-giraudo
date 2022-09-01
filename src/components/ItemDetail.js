@@ -11,7 +11,7 @@ const ItemDetail = ({ item }) => {
 
   return (
     <>
-      <div className='w-75'>
+      <div className='w-75 p-5'>
         <div class="row">
           <div class="col-sm-6">
             <div class="card">
