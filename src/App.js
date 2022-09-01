@@ -10,9 +10,7 @@ const estilos = {
   backgroundColor: 'blue',
   color: 'white'
 }
-const agregarProducto = (cant) => {
-  console.log(`Agregar ${cant} de producto al carrito`);
-}
+
 const titulo = "Aquí se observaran los diferentes productos que se ofrezcan en la pagina";
 
 
@@ -21,16 +19,11 @@ function App() {
     <div className="App">
       <NavBar />
 
-      <ItemListContainer
+      {/* <ItemListContainer
         titulo = {titulo}
       />
-      <hr />
-      {/* <ItemCount 
-        stock = {7}
-        initial = {1}
-        agregarProducto = {agregarProducto}
-      /> */}
-
+      <hr /> */}
+      
       <ItemDetailContainer />
     </div>
   );

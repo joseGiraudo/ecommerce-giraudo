@@ -26,11 +26,14 @@ const ItemDetail = ({ item }) => {
                 <h5 class="card-title">{title}</h5>
                 <p class="card-text">{description}</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
-                <ItemCount 
-                  stock = {7}
-                  initial = {1}
-                  agregarProducto = {agregarProducto}
-                />
+                <h5 class="card-text pt-4">$ {price}</h5>
+                <div>
+                  <ItemCount 
+                    stock = {7}
+                    initial = {1}
+                    agregarProducto = {agregarProducto}
+                  />
+                </div>
               </div>
             </div>
           </div>
