@@ -25,27 +25,31 @@ const NavBar = () => {
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <NavLink className="dropdown-item" to="/category">Primer categoria</NavLink>
-              <div class="dropdown-divider"></div>
+              <div className="dropdown-divider"></div>
               <NavLink className="dropdown-item" to="/category">Segunda categoria</NavLink>
-              <div class="dropdown-divider"></div>
+              <div className="dropdown-divider"></div>
               <NavLink className="dropdown-item" to="/category">Tercer categoria</NavLink>
             </div>
           </div>
         </ul>
       </div>
       
-      <div class="btn-group align-left">
-        <button type="button" class="btn btn-primary">
-          <CartWidget />
-        </button>
-        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only"></span>
-        </button>
-        <div class="dropdown-menu">
-          <NavLink className="dropdown-item" to="/category">Primer categoria</NavLink>
-          <NavLink className="dropdown-item" to="/category">Segunda categoria</NavLink>
-          <NavLink className="dropdown-item" to="/category">Tercer categoria</NavLink>
+      <div className="btn-group" style={{marginLeft: "auto"}}>
+        <div className="btn-group dropleft" role="group">
+          <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span className="sr-only"></span>
+          </button>
+          <div className="dropdown-menu">
+            <NavLink className="dropdown-item" to="/category">Primer categoria</NavLink>
+            <div className="dropdown-divider"></div>
+            <NavLink className="dropdown-item" to="/category">Segunda categoria</NavLink>
+            <div className="dropdown-divider"></div>
+            <NavLink className="dropdown-item" to="/category">Tercer categoria</NavLink>
+          </div>
         </div>
+        <button type="button" className="btn btn-secondary">
+          Split dropleft
+        </button>
       </div>
     </nav>
   )
