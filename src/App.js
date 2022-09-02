@@ -6,6 +6,8 @@ import ItemCount from './components/ItemCount';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 const estilos = {
   backgroundColor: 'blue',
   color: 'white'
@@ -16,16 +18,15 @@ const titulo = "Aquí se observaran los diferentes productos que se ofrezcan en 
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <NavBar />
-
-      {/* <ItemListContainer
-        titulo = {titulo}
-      />
-      <hr /> */}
-      
-      <ItemDetailContainer />
-    </div>
+      <Routes>
+        <Route path="/" element={ <ItemListContainer />} />
+        <Route path="detail/:itemId" element={ <ItemDetailContainer />} />
+        <Route path="/category/:categoryName" element={ <ItemListContainer />} />
+        
+      </Routes>
+    </Router>
   );
 }
 

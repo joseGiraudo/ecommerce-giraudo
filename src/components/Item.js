@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Item = ({data}) => {
 
@@ -8,7 +9,7 @@ const Item = ({data}) => {
   return (
     <>
       <div className="card-group col mb-4 w-30">
-            <div className="card"  key={id}>
+            <Link to={`/detail/${id}`} className="card text-black" style={{textDecoration: 'none', hover: 'zoom-in'}} key={id}>
                 <img className="card-img-top h-auto" src={image} alt="Card image cap" />
                 <div className="card-body">
                   <h5 className="card-title">{title}</h5>
@@ -17,7 +18,7 @@ const Item = ({data}) => {
                 <div className="card-footer">
                   <small className="text-muted">Precio: ${price}</small>
                 </div>
-          </div>
+          </Link>
         </div>
     </>
   )
