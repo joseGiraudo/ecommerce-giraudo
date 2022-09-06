@@ -16,7 +16,7 @@ const ItemDetail = ({ item }) => {
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
-                <img className="card-img-top h-auto" src={image} alt="Card image cap" />
+                <img className="card-img-top h-auto" src={image} alt={title} />
               </div>
             </div>
           </div>

@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 const ItemDetailContainer = () => {
 
   const { itemId } = useParams();
-  console.log("useParams: ", typeof(itemId))
 
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -24,7 +23,6 @@ const ItemDetailContainer = () => {
         loading ? <h3>cargando...</h3>
         :
         <div className="d-flex align-items-center justify-content-center" >
-          {console.log("data: ", data)}
           <ItemDetail item = {data} />
         </div>
       }

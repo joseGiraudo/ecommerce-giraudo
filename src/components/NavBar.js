@@ -19,16 +19,18 @@ const NavBar = () => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/contact">Contacto</NavLink>
           </li>
-          <div className='dropdown'>
+          <div className='dropdown mx-2'>
             <button className="btn  btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categorías
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <NavLink className="dropdown-item" to="/category">Primer categoria</NavLink>
+              <NavLink className="dropdown-item" to="/category/modulares">Modulares</NavLink>
               <div className="dropdown-divider"></div>
-              <NavLink className="dropdown-item" to="/category">Segunda categoria</NavLink>
+              <NavLink className="dropdown-item" to="/category/roperos">Roperos</NavLink>
               <div className="dropdown-divider"></div>
-              <NavLink className="dropdown-item" to="/category">Tercer categoria</NavLink>
+              <NavLink className="dropdown-item" to="/category/sillones">Sillones</NavLink>
+              <div className="dropdown-divider"></div>
+              <NavLink className="dropdown-item" to="/category/sillas">Sillas</NavLink>
             </div>
           </div>
         </ul>
@@ -39,16 +41,16 @@ const NavBar = () => {
           <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span className="sr-only"></span>
           </button>
-          <div className="dropdown-menu">
-            <NavLink className="dropdown-item" to="/category">Primer categoria</NavLink>
+          <div className="dropdown-menu p-2 mt-5">
+            <NavLink className="dropdown-item" to="/category">Item 1</NavLink>
             <div className="dropdown-divider"></div>
-            <NavLink className="dropdown-item" to="/category">Segunda categoria</NavLink>
+            <NavLink className="dropdown-item" to="/category">Item 2</NavLink>
             <div className="dropdown-divider"></div>
-            <NavLink className="dropdown-item" to="/category">Tercer categoria</NavLink>
+            <NavLink className="dropdown-item" to="/category">Item 3</NavLink>
           </div>
         </div>
         <button type="button" className="btn btn-secondary">
-          Split dropleft
+          <CartWidget />
         </button>
       </div>
     </nav>
