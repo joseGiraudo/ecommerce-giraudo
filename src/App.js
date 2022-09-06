@@ -7,6 +7,8 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Company from './components/Company';
+import Contact from './components/Contact';
 
 const estilos = {
   backgroundColor: 'blue',
@@ -24,6 +26,10 @@ function App() {
         <Route path="/" element={ <ItemListContainer />} />
         <Route path="detail/:itemId" element={ <ItemDetailContainer />} />
         <Route path="/category/:categoryName" element={ <ItemListContainer />} />
+        <Route path="/company" element={ <Company />} />
+        <Route path="/contact" element={ <Contact />} />
+
+        <Route path="*" element={ <ItemListContainer />} />
         
       </Routes>
     </Router>
