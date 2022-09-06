@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
+import companyLogo from '../assets/images/companyLogo.jpg';
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-      <NavLink className="navbar-brand" to="/">
-        Nombre Empresa
+      <NavLink className="navbar-logo d-inline-block align-top mx-3" to="/">
+        <img  src={companyLogo}  height="50" width="50"  alt="Company logo" />
       </NavLink>
       <div className="">
         <ul className="navbar-nav ">
