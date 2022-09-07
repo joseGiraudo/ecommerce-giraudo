@@ -9,6 +9,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Company from './components/Company';
 import Contact from './components/Contact';
+import CartContainer from './components/CartContainer';
 
 const estilos = {
   backgroundColor: 'blue',
@@ -28,6 +29,8 @@ function App() {
         <Route path="/category/:categoryName" element={ <ItemListContainer />} />
         <Route path="/company" element={ <Company />} />
         <Route path="/contact" element={ <Contact />} />
+        <Route path="/cart" element={ <CartContainer />} />
+
 
         <Route path="*" element={ <ItemListContainer />} />
         

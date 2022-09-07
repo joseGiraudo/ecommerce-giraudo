@@ -13,7 +13,7 @@ const Item = ({data}) => {
                 <img className="card-img-top h-auto" src={image} alt={title} />
                 <div className="card-body">
                   <h5 className="card-title">{title}</h5>
-                  <p className="card-text">{description}</p>
+                  <p className="card-text">{description.slice(0, 70)} ...</p>
                 </div>
                 <small className="text-muted p-2">{category}</small>
                 <div className="card-footer">

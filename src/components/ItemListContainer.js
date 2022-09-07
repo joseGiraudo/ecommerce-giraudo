@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 import getData from '../helper/helper';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({titulo}) => {
+const ItemListContainer = () => {
 
   const { categoryName } = useParams();
 
@@ -27,8 +27,7 @@ const ItemListContainer = ({titulo}) => {
 
   return (
     <>
-      <h2>{titulo}</h2>
-      <hr />
+    <br/>
       {
         loading ? <h3> Cargando...</h3> 
         :

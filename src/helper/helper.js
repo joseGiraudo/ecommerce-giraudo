@@ -21,7 +21,7 @@ const products = [
         category: "modulares",
         price : 10799,
         image : modular1,
-        description : "This is a short description",
+        description : "Mueble modular realizado de Madera de pino, de tonos oscuros. Posee un peso ligero, lo que permite su facil movilidad, ideal para realizar cambios en el diseño de tu habitación.",
     },
     {
         id : 2,
@@ -29,7 +29,7 @@ const products = [
         category: "modulares",
         price : 18999,
         image : modular2,
-        description : "This is a short description"
+        description : "Mueble modular realizado con madera de Roble Americano, la cual se destaca por sus colores claros y gran duracion. Con un diseño minimalista, este modular otorga modernidad y comodidad a tus habitaciones. Principalmente utilizado para colocar tanto televisores, como también libros y adornos."
     },
     {
         id : 3,
@@ -37,7 +37,7 @@ const products = [
         category: "modulares",
         price : 12300,
         image : modular3,
-        description : "This is a short description"
+        description : "Modular moderno en tonos blanco y negro. Este gran producto se utiliza en comedores, salas de estar y livings. Su principal funcion es para colocar un televisor aunque se le puede dar cualquier uso que se desee."
     },
     {
         id : 4,
@@ -45,23 +45,23 @@ const products = [
         category: "roperos",
         price : 22480,
         image : ropero1,
-        description : "This is a short description"
+        description : "Este ropero moderno esta diseñado para cualquier tipo de habitación, ya que por su pequeño tamaño puede ser ubicado en muchos lugares."
     },
     {
         id : 5,
         title : "Ropero rústico claro",
         category: "roperos",
-        price : 19800,
+        price : 17800,
         image : ropero2,
-        description : "This is a short description"
+        description : "Ropero de línea económica, disponible en 2 tonos, claro y oscuro. Ideal para el guardado de utilerías y artículos de uso diario"
     },
     {
         id : 6,
         title : "Ropero melamina",
         category: "roperos",
-        price : 22300,
+        price : 29300,
         image : ropero3,
-        description : "This is a short description"
+        description : "Gran ropero de 2 cuerpos, con puertas corredizas. Diseñado especialmente para habitaciones, posee una gran capacidad y comodidad para el guardado de ropa y demás artículos que uno desee tener a mano en su dormitorio. Su material duradero, hace que no se hinche con humedad y o filtraciones de agua."
     },
     {
         id : 7,
@@ -69,7 +69,7 @@ const products = [
         category: "roperos",
         price : 26789,
         image : ropero4,
-        description : "This is a short description"
+        description : "Ropero ideal para departamentos. El modelo Logan 200 trae consigo una gran relación entre el espacio que ocupa en la habitación y su capacidad de guardado de prendas. Nuestros clientes lo utilizan en espacios pequeños así como también en habitaciones de niños y niñas."
     },
     {
         id : 8,
@@ -77,7 +77,7 @@ const products = [
         category: "sillas",
         price : 7900,
         image : silla1,
-        description : "This is a short description"
+        description : "Silla con total comodidad, equipada con asiento con almohadon tapizado y respaldar tipo reja hecha de madera. Ideal para comedores de casas de campo y/o quinchos. Disponible con tapizado de varios colores, este producto ofrece una gran comodidad y una muy buena relación precio/calidad."
     },
     {
         id : 9,
@@ -85,7 +85,7 @@ const products = [
         category: "sillas",
         price : 8600,
         image : silla2,
-        description : "This is a short description"
+        description : "Silla de madera, con asiendo y respaldar acolchados con tapizados de cuerina fina. Este producto presenta una gran comodidad y ergonomía, lo que la hace una silla ideal para realizar trabajos de escritorio, así como tambien lectura y pasar varias horas sentado sin sentir cansancio en la espalda y piernas."
     },
     {
         id : 10,
@@ -93,7 +93,7 @@ const products = [
         category: "sillas",
         price : 9789,
         image : silla3,
-        description : "This is a short description"
+        description : "Silla de comedor tapizada, con asiento acolchado y una elegante terminación. Gracias a estas características, es de las mas utilizadas para lujosos comedores de hoteles y restaurantes, así como tambien para casas de uso particular."
     },
     {
         id : 11,
@@ -101,7 +101,7 @@ const products = [
         category: "sillas",
         price : 5900,
         image : silla4,
-        description : "This is a short description"
+        description : "La silla de plástico, de un precio inmejorable, es una silla liviana, perfecta para uso en departamentos y habitaciones chicas. Su peso permite su facil movilidad y transporte, para utilizar en cualquier parte de la casa. Al ser de plástico y madera barnizada, presenta mayor durabilidad a la humedad y al agua que las demás."
     },
     {
         id : 12,
@@ -109,31 +109,31 @@ const products = [
         category: "sillones",
         price : 28999,
         image : sillon1,
-        description : "This is a short description"
+        description : "Sillon de 3 cuerpos, tapizado con cuerina azul marino. Este sillon presenta un diseño estándar, ideal para salas de espera, halls, y salas de estar. Sus patas reforzadas lo hacen resistente al peso. Incluye 2 mini almohadones para sus corneras."
     },
     {
         id : 13,
-        title : "Sillon apoyapies",
+        title : "Sillon con apoyapies",
         category: "sillones",
         price : 36999,
         image : sillon2,
-        description : "This is a short description"
+        description : "Sillon de tres cuerpos con apoyapies adicional. Ideal para familias numerosas, o para recostarse a ver peliculas o series. Es de gran comodidad ya que sus almohadones estan hechos de espuma de poliuretano, lo que le da gran resistencia a las deformaciones."
     },
     {
         id : 14,
-        title : "sillon con cubos y apoyapies",
+        title : "Sillon con cubos y apoyapies",
         category: "sillones",
         price : 42300,
         image : sillon3,
-        description : "This is a short description"
+        description : "Sillon de tres cuerpos, con apoyapies integrado y dos cubos extras. Es el mas grande en su gama, ideal para livings y sals de estar grandes. Posee una calidad superior a los demas ya que tanto su manufactura se realiza con materiales de primera mano, disponible en tres colores y con dos almoadones adicionales sin costo."
     },
     {
         id : 15,
-        title : "sillon doble",
+        title : "Sillon doble",
         category: "sillones",
         price : 24999,
         image : sillon4,
-        description : "This is a short description"
+        description : "Sillon de dos cuerpos, de gran comodidad. Este mueble encaja perfectamente en habitaciones acogedoras, ya que ocupa poco tamaño, pero tanto su comodidad como calidad son de primera. Posee respaldar y apoyabrazos rígidos para darle una mayor estructura."
     },
 
 

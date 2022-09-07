@@ -1,14 +1,16 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import companyLogo from '../assets/images/companyLogo.jpg';
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-      <NavLink className="navbar-logo d-inline-block align-top mx-3" to="/">
-        <img  src={companyLogo}  height="50" width="50"  alt="Company logo" />
+      <NavLink className="navbar-brand d-inline-block align-top mx-3" to="/">
+        <img  src={companyLogo}  height="50" width="50"  style={{borderRadius: "5px"}}alt="Company logo" />
+        <p style={{display: "inline-block", marginLeft: "7px"}}>FURNITURE</p>
       </NavLink>
+
       <div className="">
         <ul className="navbar-nav ">
           <li className="nav-item active">
@@ -50,9 +52,11 @@ const NavBar = () => {
             <NavLink className="dropdown-item" to="/category">Item 3</NavLink>
           </div>
         </div>
-        <button type="button" className="btn btn-secondary">
-          <CartWidget />
-        </button>
+        <Link to="/cart">
+          <button type="button" className="btn btn-secondary">
+            <CartWidget />
+          </button>
+        </Link>
       </div>
     </nav>
   )

@@ -25,7 +25,6 @@ const ItemDetail = ({ item }) => {
               <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
                 <h5 className="card-text pt-4">$ {price}</h5>
                 <div>
                   <ItemCount 
