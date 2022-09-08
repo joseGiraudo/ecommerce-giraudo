@@ -6,7 +6,7 @@ const ItemDetail = ({ item }) => {
   const {id, title, price, image, description} = item;
 
   const agregarProducto = (cant) => {
-    console.log(`Agregar ${cant} de producto al carrito`);
+    console.log(`Agregar ${cant} ${title}, con id: ${id} al carrito`);
   }
 
   return (

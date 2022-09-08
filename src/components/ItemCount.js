@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ItemCount = ({stock, initial, agregarProducto}) => {
+
     const [ contador, setContador ] = useState(initial);
 
     const sumarClick = () => {
@@ -21,8 +23,11 @@ const ItemCount = ({stock, initial, agregarProducto}) => {
                 <h5 className="p-2">{contador}</h5>
                 <button type="button" className="btn btn-outline-success btn-sm" onClick={sumarClick} >+</button>
             </div>
-                <hr/>
-                <button type="button" className="btn btn-outline-primary" onClick={() => (agregarProducto(contador))} >Agregar al carrito</button>
+            <hr/>
+            <div>
+                <button type="button" className="btn btn-outline-primary w-50" onClick={() => (agregarProducto(contador))} >Agregar al carrito</button>
+                <Link type="button" to="/cart" className="btn btn-primary w-50">Finalizar compra</Link>
+            </div>    
         </div>
     )
 }

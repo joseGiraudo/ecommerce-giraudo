@@ -44,12 +44,13 @@ const NavBar = () => {
           <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span className="sr-only"></span>
           </button>
+          
           <div className="dropdown-menu p-2 mt-5">
-            <NavLink className="dropdown-item" to="/category">Item 1</NavLink>
+            <NavLink className="dropdown-item" to="/cart">Item 1</NavLink>
             <div className="dropdown-divider"></div>
-            <NavLink className="dropdown-item" to="/category">Item 2</NavLink>
+            <NavLink className="dropdown-item" to="/cart">Item 2</NavLink>
             <div className="dropdown-divider"></div>
-            <NavLink className="dropdown-item" to="/category">Item 3</NavLink>
+            <NavLink className="dropdown-item" to="/cart">Item 3</NavLink>
           </div>
         </div>
         <Link to="/cart">
