@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { CartContext } from '../context/CartContext';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({ item }) => {
-  console.log("item: ", item);
+
   const {id, title, price, image, description} = item;
 
+  const { addToCart } = useContext(CartContext);
+
   const agregarProducto = (cant) => {
-    console.log(`Agregar ${cant} ${title}, con id: ${id} al carrito`);
+    addToCart(item, cant)
   }
 
   return (

@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import NavBar from './components/NavBar';
-import ItemCount from './components/ItemCount';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
@@ -10,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Company from './components/Company';
 import Contact from './components/Contact';
 import CartContainer from './components/CartContainer';
+import { CartProvider } from './context/CartContext';
 
 const estilos = {
   backgroundColor: 'blue',
@@ -21,21 +20,23 @@ const titulo = "Aquí se observaran los diferentes productos que se ofrezcan en 
 
 function App() {
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={ <ItemListContainer />} />
-        <Route path="detail/:itemId" element={ <ItemDetailContainer />} />
-        <Route path="/category/:categoryName" element={ <ItemListContainer />} />
-        <Route path="/company" element={ <Company />} />
-        <Route path="/contact" element={ <Contact />} />
-        <Route path="/cart" element={ <CartContainer />} />
+    <CartProvider>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={ <ItemListContainer />} />
+          <Route path="detail/:itemId" element={ <ItemDetailContainer />} />
+          <Route path="/category/:categoryName" element={ <ItemListContainer />} />
+          <Route path="/company" element={ <Company />} />
+          <Route path="/contact" element={ <Contact />} />
+          <Route path="/cart" element={ <CartContainer />} />
 
 
-        <Route path="*" element={ <ItemListContainer />} />
-        
-      </Routes>
-    </Router>
+          <Route path="*" element={ <ItemListContainer />} />
+          
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

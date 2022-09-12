@@ -25,7 +25,7 @@ const ItemCount = ({stock, initial, agregarProducto}) => {
             </div>
             <hr/>
             <div>
-                <button type="button" className="btn btn-outline-primary w-50" onClick={() => (agregarProducto(contador))} >Agregar al carrito</button>
+                <button type="button" className="btn btn-outline-primary w-50" onClick={() => (agregarProducto(parseInt(contador)))} >Agregar al carrito</button>
                 <Link type="button" to="/cart" className="btn btn-primary w-50">Finalizar compra</Link>
             </div>    
         </div>
