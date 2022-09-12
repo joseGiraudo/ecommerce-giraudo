@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import companyLogo from '../assets/images/companyLogo.jpg';
+import { CartContext } from '../context/CartContext';
 
 const NavBar = () => {
+
+  const { cartItemsList } = useContext(CartContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
       <NavLink className="navbar-brand d-inline-block align-top mx-3" to="/">
@@ -46,11 +50,14 @@ const NavBar = () => {
           </button>
           
           <div className="dropdown-menu p-2 mt-5">
-            <NavLink className="dropdown-item" to="/cart">Item 1</NavLink>
-            <div className="dropdown-divider"></div>
-            <NavLink className="dropdown-item" to="/cart">Item 2</NavLink>
-            <div className="dropdown-divider"></div>
-            <NavLink className="dropdown-item" to="/cart">Item 3</NavLink>
+            {
+              cartItemsList.map(item => (
+                <>
+                  <NavLink className="dropdown-item" to={`/detail/${item.id}`}>{item.title} : {item.quantity}</NavLink>
+                  <div className="dropdown-divider"></div>
+                </>
+              ))
+            }
           </div>
         </div>
         <Link to="/cart">

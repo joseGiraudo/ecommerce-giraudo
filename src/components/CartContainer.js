@@ -10,11 +10,19 @@ const CartContainer = () => {
   return (
     <div>
         {
-          cartItemsList.map( item => (
-            <Cart key={item.id} item={item} />
-          ))
+          cartItemsList.length > 0 ?
+            <>
+              {
+                cartItemsList.map( item => (
+                  <Cart key={item.id} item={item} />
+                ))
+              }
+              <button onClick={clearCart}>Vaciar carrito</button>
+            </>
+          :
+            <p>Agrega productos al carrito</p>
+          
         }
-        <button onClick={clearCart}>Vaciar carrito</button>
     </div>
   )
 }
