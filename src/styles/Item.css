@@ -1,0 +1,8 @@
+.cat-hover :hover {
+    opacity: 0.7;
+}
+.item-hover :hover {
+    opacity: 0.9;
+    transition: 4ms;
+    transform: scale(1.01);
+}

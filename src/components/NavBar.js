@@ -6,7 +6,7 @@ import { CartContext } from '../context/CartContext';
 
 const NavBar = () => {
 
-  const { cartItemsList } = useContext(CartContext);
+  const { cartItemsList, getTotalItems } = useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
@@ -49,21 +49,22 @@ const NavBar = () => {
             <span className="sr-only"></span>
           </button>
           
-          <div className="dropdown-menu p-2 mt-5">
+          <div className="dropdown-menu mt-5" style={{"margin-right": "auto"}}>
             {
               cartItemsList.map(item => (
                 <>
-                  <NavLink className="dropdown-item" to={`/detail/${item.id}`}>{item.title} : {item.quantity}</NavLink>
+                  <NavLink className="dropdown-item d-flex" to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
                   <div className="dropdown-divider"></div>
                 </>
               ))
             }
           </div>
         </div>
-        <Link to="/cart">
-          <button type="button" className="btn btn-secondary">
-            <CartWidget />
-          </button>
+        <Link to="/cart"  type="button" className="btn btn-secondary">
+          <CartWidget />
+          <span class="badge ">{
+            getTotalItems(cartItemsList)
+          }</span>
         </Link>
       </div>
     </nav>
