@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## E-commerce para el proyecto de React de Coderhouse
+Curso de la plataforma de Coderhouse, de React, comisión 41590
+
 ## Available Scripts
 
 In the project directory, you can run:
