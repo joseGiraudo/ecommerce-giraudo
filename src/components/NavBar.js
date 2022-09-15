@@ -43,30 +43,36 @@ const NavBar = () => {
         </ul>
       </div>
       
-      <div className="btn-group" style={{marginLeft: "auto"}}>
-        <div className="btn-group dropleft" role="group">
-          <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span className="sr-only"></span>
-          </button>
-          
-          <div className="dropdown-menu mt-5" style={{"margin-right": "auto"}}>
-            {
-              cartItemsList.map(item => (
-                <>
-                  <NavLink className="dropdown-item d-flex" to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
-                  <div className="dropdown-divider"></div>
-                </>
-              ))
-            }
+      {
+        getTotalItems(cartItemsList) > 0 ? 
+          <div className="btn-group" style={{marginLeft: "auto"}}>
+            <div className="btn-group dropleft" role="group">
+              <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span className="sr-only"></span>
+              </button>
+              
+              <div className="dropdown-menu mt-5" style={{"margin-right": "auto"}}>
+                {
+                  cartItemsList.map(item => (
+                    <>
+                      <NavLink className="dropdown-item d-flex" to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
+                      <div className="dropdown-divider"></div>
+                    </>
+                  ))
+                }
+              </div>
+            </div>
+            <Link to="/cart"  type="button" className="btn btn-secondary">
+              <CartWidget />
+              <span class="badge ">{
+                getTotalItems(cartItemsList)
+              }</span>
+            </Link>
           </div>
-        </div>
-        <Link to="/cart"  type="button" className="btn btn-secondary">
-          <CartWidget />
-          <span class="badge ">{
-            getTotalItems(cartItemsList)
-          }</span>
-        </Link>
-      </div>
+          :
+          null
+      }
+      
     </nav>
   )
 }
