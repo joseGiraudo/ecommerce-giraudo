@@ -11,18 +11,6 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-/*   useEffect(() => {
-    getData.then(data => {
-      if(!categoryName) {
-        setData(data);
-        setLoading(false);
-      } else {
-        const listaFiltrada = data.filter(item => item.category === categoryName);
-        setData(listaFiltrada);
-        setLoading(false);
-      }
-    })
-  }, [categoryName]) */
   useEffect(() => {
     const getData = async() => {
       try {
