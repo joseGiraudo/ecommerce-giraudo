@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
@@ -11,13 +10,6 @@ import Contact from './components/Contact';
 import CartContainer from './components/CartContainer';
 import { CartProvider } from './context/CartContext';
 import PaginaFirebase from './components/PaginaFirebase';
-
-const estilos = {
-  backgroundColor: 'blue',
-  color: 'white'
-}
-
-const titulo = "Aquí se observaran los diferentes productos que se ofrezcan en la pagina";
 
 
 function App() {
