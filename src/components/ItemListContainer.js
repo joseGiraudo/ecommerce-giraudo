@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
-import getData from '../helper/helper';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../utils/firebase';
 
 const ItemListContainer = () => {
 
@@ -10,7 +11,7 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     getData.then(data => {
       if(!categoryName) {
         setData(data);
@@ -21,7 +22,36 @@ const ItemListContainer = () => {
         setLoading(false);
       }
     })
-  }, [categoryName])
+  }, [categoryName]) */
+  useEffect(() => {
+    const getData = async() => {
+      try {
+          let queryRef
+          if(!categoryName) {
+            queryRef = collection(db, "items"); // consulta a la db sin condicion
+          } else {
+            queryRef = query(collection(db, "items"), where("category", "==", categoryName))
+          }
+          const response = await getDocs(queryRef);
+          const docs = response.docs
+
+          const datos = docs.map( doc => {
+              return {...doc.data(), id: doc.id}
+          });
+
+          setData(datos);
+          setLoading(false);
+          
+        } catch (error) {
+            console.log(error)
+        }
+    }
+        getData()
+      
+  
+  }, [categoryName]);
+
+  //console.log("datos", data)
 
   // cuando traigo la data de los items, el loading pasa a false y se muestran los items
 

@@ -7,14 +7,14 @@ import { BsFillTrashFill } from 'react-icons/bs';
 const Cart = ({ item }) => {
 
   const { removeCartItem } = useContext(CartContext);
-  const { id, title, quantity, price, image, description, itemsPrice } = item;
+  const { id, title, quantity, price, imageUrl, description, itemsPrice } = item;
 
   return (
-    <div className="container-fluid border-top border-bottom border-dark rounded p-2" style={{"background-color": "#c6c9c8"}}>
+    <div className="container-fluid border-top border-bottom border-dark rounded p-2" style={{"backgroundColor": "#c6c9c8"}}>
       <div className="row">
         <div className="col-4">
           <Link to={`/detail/${id}`}>
-            <img className="img-fluid img-thumbnail" src={image} alt={title}></img>
+            <img className="img-fluid img-thumbnail" src={imageUrl} alt={title}></img>
           </Link>
         </div>
         <div className="col-4">

@@ -34,13 +34,13 @@ const CartContainer = () => {
                       totalPrice = totalPrice + Number(item.itemsPrice)
                     ))
                   }
-                  <h5 class="card-header text-center ">Resumen de tu compra</h5>
-                  <div class="d-flex p-2 mt-3 bg-light justify-content-between align-middle">
-                    <p class="text-start">Total: </p>
-                    <p class="text-end fw-bold">$ {totalPrice}</p>
+                  <h5 className="card-header text-center ">Resumen de tu compra</h5>
+                  <div className="d-flex p-2 mt-3 bg-light justify-content-between align-middle">
+                    <p className="text-start">Total: </p>
+                    <p className="text-end fw-bold">$ {totalPrice}</p>
                   </div>
                   <div className="d-flex align-items-end">
-                    <Link type="button" to="/" className="btn btn-primary w-100 align-middle">Finalizar compra</Link>
+                    <Link type="button" to="/sale" className="btn btn-primary w-100 align-middle">Finalizar compra</Link>
                   </div>
                   
                 </div>

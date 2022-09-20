@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 const ItemCount = ({stock, initial, agregarProducto}) => {
+
+  const { cartItemsList, getTotalItems } = useContext(CartContext);
 
     const [ contador, setContador ] = useState(initial);
 
@@ -26,7 +29,11 @@ const ItemCount = ({stock, initial, agregarProducto}) => {
             <hr/>
             <div>
                 <button type="button" className="btn btn-outline-primary w-50" onClick={() => (agregarProducto(parseInt(contador)))} >Agregar al carrito</button>
-                <Link type="button" to="/cart" className="btn btn-primary w-50">Ver Carrito</Link>
+                {
+                    getTotalItems(cartItemsList) > 0 ?
+                        <Link type="button" to="/cart" className="btn btn-primary w-50">Ver Carrito</Link>
+                    : null
+                }
             </div>    
         </div>
     )

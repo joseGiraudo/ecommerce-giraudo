@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
-import getData from '../helper/helper';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../utils/firebase';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
@@ -11,11 +12,21 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getData
-      .then(res => {
-        setData(res.find(item => item.id === parseInt(itemId)))
-        setLoading(false)
+    const getData = async() => {
+      const queryRef = doc(db, "items", itemId); 
+      await getDoc(queryRef)
+        .then(res => {
+          const dato = { ...res.data(), id: res.id }
+          console.log(dato)
+          setData(dato)
+          setLoading(false)
+        })
+        .catch(error => {
+          console.log(error)
       })
+    }
+    getData()
+
   }, [itemId])
   return (
     <>

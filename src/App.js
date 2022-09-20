@@ -3,12 +3,14 @@ import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import SalesContainer from './components/SalesContainer';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Company from './components/Company';
 import Contact from './components/Contact';
 import CartContainer from './components/CartContainer';
 import { CartProvider } from './context/CartContext';
+import PaginaFirebase from './components/PaginaFirebase';
 
 const estilos = {
   backgroundColor: 'blue',
@@ -30,6 +32,8 @@ function App() {
           <Route path="/company" element={ <Company />} />
           <Route path="/contact" element={ <Contact />} />
           <Route path="/cart" element={ <CartContainer />} />
+          <Route path='/firebase' element={ <PaginaFirebase /> } />
+          <Route path='/sale' element={ <SalesContainer /> } />
 
 
           <Route path="*" element={ <ItemListContainer />} />

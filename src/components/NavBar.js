@@ -51,7 +51,7 @@ const NavBar = () => {
                 <span className="sr-only"></span>
               </button>
               
-              <div className="dropdown-menu mt-5" style={{"margin-right": "auto"}}>
+              <div className="dropdown-menu mt-5" style={{"marginRight": "auto"}}>
                 {
                   cartItemsList.map(item => (
                     <>
@@ -64,7 +64,7 @@ const NavBar = () => {
             </div>
             <Link to="/cart"  type="button" className="btn btn-secondary">
               <CartWidget />
-              <span class="badge ">{
+              <span className="badge ">{
                 getTotalItems(cartItemsList)
               }</span>
             </Link>

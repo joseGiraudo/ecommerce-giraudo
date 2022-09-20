@@ -4,7 +4,7 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ({ item }) => {
 
-  const {id, title, price, image, description} = item;
+  const {id, title, price, imageUrl, description} = item;
 
   const { addToCart } = useContext(CartContext);
 
@@ -19,7 +19,7 @@ const ItemDetail = ({ item }) => {
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
-                <img className="card-img-top h-auto" src={image} alt={title} />
+                <img className="card-img-top h-auto" src={imageUrl} alt={title} />
               </div>
             </div>
           </div>

@@ -1,4 +1,28 @@
-import modular1 from "../assets/images/modular1.jpg";
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../utils/firebase';
+
+const getData = async() => {
+    try {
+        const queryRef = collection(db, "items"); // consulta a la db
+        const response = await getDocs(queryRef);
+        const docs = response.docs
+        console.log(docs[0].data());
+        
+        const data = docs.map( doc => {
+            return {...doc.data(), id: doc.id}
+        });
+        
+    } catch (error) {
+        console.log(error)
+    }
+    
+}
+export default getData;
+
+
+
+
+/* import modular1 from "../assets/images/modular1.jpg";
 import modular2 from "../assets/images/modular2.jpg";
 import modular3 from "../assets/images/modular3.jpg";
 import ropero1 from "../assets/images/ropero1.jpg";
@@ -12,9 +36,10 @@ import silla4 from "../assets/images/silla4.jpg";
 import sillon1 from "../assets/images/sillon1.jpg";
 import sillon2 from "../assets/images/sillon2.jpg";
 import sillon3 from "../assets/images/sillon3.jpg";
-import sillon4 from "../assets/images/sillon4.jpg";
+import sillon4 from "../assets/images/sillon4.jpg"; */
 
-const products = [
+
+/* const products = [
     {
         id : 1,
         title : "Modular pino oscuro",
@@ -138,12 +163,12 @@ const products = [
 
 
 ];
-
-const getData = new Promise((res, rej) => {
+ */
+/* const getData = new Promise((res, rej) => {
     setTimeout(() => {
         res(products)
         rej(err => console.log('Hubo un error al obteer los productos: ', err))
     }, 2000)
 });
 
-export default getData;
+export default getData; */
