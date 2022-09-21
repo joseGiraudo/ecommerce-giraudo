@@ -1,52 +1,61 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+
 
 const SaleForm = ({ cartItemsList }) => {
 
+  const [ sale, setSale ] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
+    products: [],
+    date: "",
+    total: 0
+  })
+
+  const handleChange = (e) => {
+    console.log(e.target.name)
+    console.log(e.target.value)
+    setSale({...sale, [e.target.name]: e.target.value})
+  }
 
     const sendSaleData = (e) => {
         e.preventDefault();
-        console.log(e);
+        setSale({...sale, [e.target.name]: e.target.value})
+        console.log(sale)
+        alert('has realizado la compra exitosamente')
     }
 
     console.log(cartItemsList);
 
   return (
-    <div className="container w-75 p-2 rounded" style={{"backgroundColor": "#f7fae8"}}>
-      <h4>Finaliza la compra de los siguientes productos</h4>
-
-      <div>
-        {
-          cartItemsList.map(item => (
-            <>
-              <h6 className="mx-2 p-2">{item.quantity} x {item.title}</h6>
-            </>
-          ))
-        }
-      </div>
-      
+    <>
       <h4>Completa con tus datos</h4>
-        <form>
+        <form onSubmit={sendSaleData}>
           <div className="row p-1">
             <div className="col p-1">
-              <input type="text" required={true} className="form-control" placeholder="Nombre" />
+              <input type="text" required={true} className="form-control" name="name" 
+              onChange={handleChange} placeholder="Nombre" />
             </div>
             <div className="col p-1">
-              <input type="text" required={true} className="form-control" placeholder="Apellido" />
+              <input type="text" required={true} className="form-control" name="surname" 
+              onChange={handleChange} placeholder="Apellido" />
             </div>
           </div>
           <div className="row p-1">
             <div className="col p-1">
-              <input type="email" required={true} className="form-control" placeholder="e-mail" />
+              <input type="email" required={true} className="form-control" name="email" 
+              onChange={handleChange} placeholder="e-mail" />
             </div>
             <div className="col p-1">
-              <input type="number" required={true} className="form-control" placeholder="Numero de Tel." />
+              <input type="number" required={true} className="form-control" name="phone" 
+              onChange={handleChange} placeholder="Numero de Tel." />
             </div>
           </div>
-          <input className="btn btn-primary float-right" type="submit" onSubmit={sendSaleData}/>
+          <input className="btn btn-primary float-right" type="submit" />
         </form>
-
-
-    </div>
+    </>
   )
 }
 

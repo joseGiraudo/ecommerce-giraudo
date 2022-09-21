@@ -3,6 +3,7 @@ import ItemDetail from './ItemDetail';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../utils/firebase';
 import { useParams } from 'react-router-dom';
+import Spinner from './Spinner';
 
 const ItemDetailContainer = () => {
 
@@ -31,7 +32,7 @@ const ItemDetailContainer = () => {
   return (
     <>
       {
-        loading ? <h3>cargando...</h3>
+        loading ? <Spinner />
         :
         <div className="d-flex align-items-center justify-content-center" >
           <ItemDetail item = {data} />

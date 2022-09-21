@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const CartContainer = () => {
 
-  const { cartItemsList, clearCart } = useContext(CartContext);
+  const { cartItemsList, clearCart, getTotalPrice } = useContext(CartContext);
 
-  let totalPrice = Number(0);
+  let totalPrice = getTotalPrice();
 
   return (
     <div>
@@ -29,11 +29,6 @@ const CartContainer = () => {
                 </div>
                 <div className="col-1"></div>
                 <div className="card col-3 bg-gradient-primary flex-column">
-                  {
-                    cartItemsList.forEach( item => (
-                      totalPrice = totalPrice + Number(item.itemsPrice)
-                    ))
-                  }
                   <h5 className="card-header text-center ">Resumen de tu compra</h5>
                   <div className="d-flex p-2 mt-3 bg-light justify-content-between align-middle">
                     <p className="text-start">Total: </p>
