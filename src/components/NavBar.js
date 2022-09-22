@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import companyLogo from '../assets/images/companyLogo.jpg';
 import { CartContext } from '../context/CartContext';
 
 const NavBar = () => {
+
+  const location = useLocation();
 
   const { cartItemsList, getTotalItems } = useContext(CartContext);
 
@@ -44,7 +46,7 @@ const NavBar = () => {
       </div>
       
       {
-        getTotalItems(cartItemsList) > 0 ? 
+        getTotalItems(cartItemsList) > 0 && location.pathname !== "/sale" ? 
           <div className="btn-group" style={{marginLeft: "auto"}}>
             <div className="btn-group dropleft" role="group">
               <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
