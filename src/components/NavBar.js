@@ -55,7 +55,7 @@ const NavBar = () => {
                 {
                   cartItemsList.map(item => (
                     <>
-                      <NavLink className="dropdown-item d-flex" to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
+                      <NavLink className="dropdown-item d-flex" key={item.id} to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
                       <div className="dropdown-divider"></div>
                     </>
                   ))

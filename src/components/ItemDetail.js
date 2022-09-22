@@ -4,12 +4,14 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ({ item }) => {
 
-  const {id, title, price, imageUrl, description} = item;
+  const {id, title, price, imageUrl, description, stock} = item;
 
   const { addToCart } = useContext(CartContext);
 
+  const initial = 1;
+
   const agregarProducto = (cant) => {
-    addToCart(item, cant)
+    addToCart(item, cant);
   }
 
   return (
@@ -31,8 +33,8 @@ const ItemDetail = ({ item }) => {
                 <h5 className="card-text pt-4">$ {price}</h5>
                 <div>
                   <ItemCount 
-                    stock = {7}
-                    initial = {1}
+                    stock = {stock}
+                    initial = {initial}
                     agregarProducto = {agregarProducto}
                   />
                 </div>

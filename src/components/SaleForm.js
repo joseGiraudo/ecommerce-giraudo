@@ -1,30 +1,36 @@
-import React, { useState, useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import React, { useState } from 'react';
+import { db } from '../utils/firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 
-const SaleForm = ({ cartItemsList }) => {
+const SaleForm = ({ cartItemsList, totalPrice }) => {
 
-  const [ sale, setSale ] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
-    products: [],
-    date: "",
-    total: 0
-  })
-
-  const handleChange = (e) => {
-    console.log(e.target.name)
-    console.log(e.target.value)
-    setSale({...sale, [e.target.name]: e.target.value})
-  }
+  const [ orderId, setOrderId ] = useState("");
 
     const sendSaleData = (e) => {
         e.preventDefault();
-        setSale({...sale, [e.target.name]: e.target.value})
-        console.log(sale)
-        alert('has realizado la compra exitosamente')
+        const order = {
+          buyer: {
+            [e.target[0].name]: e.target[0].value,
+            [e.target[1].name]: e.target[1].value,
+            [e.target[2].name]: e.target[2].value,
+            [e.target[3].name]: e.target[3].value
+          },
+          products: cartItemsList,
+          date: Date(),
+          total: totalPrice
+        }
+
+        // referencia a la DB
+        const queryRef = collection(db, "orders");
+        // agregamos el doc
+        addDoc(queryRef, order)
+          .then(res => setOrderId(res.id))
+
+        console.log(orderId);
+        alert(`La compra se realizo correctamente, tu id de compra es : ${orderId}`)
+        e.target.reset();
+
     }
 
     console.log(cartItemsList);
@@ -36,21 +42,21 @@ const SaleForm = ({ cartItemsList }) => {
           <div className="row p-1">
             <div className="col p-1">
               <input type="text" required={true} className="form-control" name="name" 
-              onChange={handleChange} placeholder="Nombre" />
+                placeholder="Nombre" />
             </div>
             <div className="col p-1">
               <input type="text" required={true} className="form-control" name="surname" 
-              onChange={handleChange} placeholder="Apellido" />
+                placeholder="Apellido" />
             </div>
           </div>
           <div className="row p-1">
             <div className="col p-1">
               <input type="email" required={true} className="form-control" name="email" 
-              onChange={handleChange} placeholder="e-mail" />
+                placeholder="e-mail" />
             </div>
             <div className="col p-1">
               <input type="number" required={true} className="form-control" name="phone" 
-              onChange={handleChange} placeholder="Numero de Tel." />
+                placeholder="Numero de Tel." />
             </div>
           </div>
           <input className="btn btn-primary float-right" type="submit" />

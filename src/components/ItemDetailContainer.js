@@ -18,7 +18,6 @@ const ItemDetailContainer = () => {
       await getDoc(queryRef)
         .then(res => {
           const dato = { ...res.data(), id: res.id }
-          console.log(dato)
           setData(dato)
           setLoading(false)
         })

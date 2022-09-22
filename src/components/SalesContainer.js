@@ -13,13 +13,13 @@ const SalesContainer = () => {
         <h4>Finaliza la compra de los siguientes productos</h4>
           {
             cartItemsList.map(item => (
-                <h6 className="mx-2 p-2">{item.quantity} x {item.title}</h6>
+                <h6 className="mx-2 p-2" key={item.id}>{item.quantity} x {item.title}</h6>
             ))
           }
           <h5>Precio Total: ${totalPrice}</h5>
         {
           cartItemsList.length > 0 ? 
-            <SaleForm cartItemsList={cartItemsList}/>
+            <SaleForm cartItemsList={cartItemsList} totalPrice={totalPrice}/>
           :
             <h4 className="p-3">Debes agregar productos al carrito para realizar una compra</h4>
         }
