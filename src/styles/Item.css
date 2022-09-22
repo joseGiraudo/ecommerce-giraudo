@@ -6,3 +6,12 @@
     transition: 4ms;
     transform: scale(1.01);
 }
+
+.out-of-stock {
+    opacity: 0.6;
+}
+.no-stock{
+    color: red;
+    padding: 1px;
+    align-self: auto;
+}

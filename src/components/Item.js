@@ -6,16 +6,19 @@ const Item = ({data}) => {
 
 
   // Tengo que pasarle la data desde algun lugar
-  const {id, title, category, price, imageUrl, description} = data;
+  const {id, title, category, price, imageUrl, description, stock} = data;
   return (
     <>
-      <div className="card mb-4 ">
+      <div className={`card mb-4 ${stock < 1 ? "out-of-stock" : null }`}>
         <Link to={`/detail/${id}`} className="text-decoration-none text-black item-hover" key={id}>
           <img className="card-img-top p-2" src={imageUrl} alt={title} />
         </Link>
         <div className="card-body">
           <Link to={`/detail/${id}`} className="text-decoration-none text-black item-hover" key={id}>
             <h5 className="card-title">{title}</h5>
+            {
+              stock < 1 ? <h5 className="no-stock">Sin Stock</h5> : null
+            }
             <p className="card-text">{description.slice(0, 70)} ...</p>
           </Link>
         </div>

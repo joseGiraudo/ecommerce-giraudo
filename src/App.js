@@ -25,10 +25,9 @@ function App() {
           <Route path="/contact" element={ <Contact />} />
           <Route path="/cart" element={ <CartContainer />} />
           <Route path='/firebase' element={ <PaginaFirebase /> } />
-          <Route path='/sale' element={ <SalesContainer /> } />
-
-
           <Route path="*" element={ <ItemListContainer />} />
+          
+          <Route path='/sale' element={ <SalesContainer /> } />
           
         </Routes>
       </Router>
