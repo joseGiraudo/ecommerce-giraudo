@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 import { db } from '../utils/firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, doc, updateDoc } from 'firebase/firestore';
 
 
 const SaleForm = ({ cartItemsList, totalPrice }) => {
 
   const [ orderId, setOrderId ] = useState("");
+
+  const reStock = (prodList) => {
+
+    
+    prodList.forEach(prod => {
+      const queryRef = doc(db, "items", prod.id);
+      const newStock = prod.stock - prod.quantity;
+      updateDoc(queryRef, {stock: newStock})
+        .then(console.log(`Stock de ${prod.title} actualizado. Nuevo stock: ${newStock}`))
+      
+    });
+  }
 
     const sendSaleData = (e) => {
         e.preventDefault();
@@ -28,9 +40,10 @@ const SaleForm = ({ cartItemsList, totalPrice }) => {
           .then(res => setOrderId(res.id))
 
         console.log(orderId);
-        alert(`La compra se realizo correctamente, tu id de compra es : ${orderId}`)
+        alert(`La compra se realizo correctamente, tu id de compra es : `, + orderId)
         e.target.reset();
-
+        
+        reStock(cartItemsList);
     }
 
     console.log(cartItemsList);
