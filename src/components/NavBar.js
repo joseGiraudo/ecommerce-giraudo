@@ -8,62 +8,63 @@ const NavBar = () => {
 
   const location = useLocation();
 
-  const { cartItemsList, getTotalItems } = useContext(CartContext);
+  const { cartItemsList, getTotalItems, clearCart } = useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-      <NavLink className="navbar-brand d-inline-block align-top mx-3" to="/">
+      <NavLink className="navbar-brand d-inline-block align-top mx-3" to="/" onClick={location.pathname === "/sale" ? clearCart : null}>
         <img  src={companyLogo}  height="50" width="50"  style={{borderRadius: "5px"}}alt="Company logo" />
         <p style={{display: "inline-block", marginLeft: "7px"}}>FURNITURE</p>
       </NavLink>
 
-      <div className="">
-        <ul className="navbar-nav ">
-          <li className="nav-item active">
-            <NavLink className="nav-link" to="/">Inicio</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/company">Empresa</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/contact">Contacto</NavLink>
-          </li>
-          <div className='dropdown mx-2'>
-            <button className="btn  btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categorías
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <NavLink className="dropdown-item" to="/category/modulares">Modulares</NavLink>
-              <div className="dropdown-divider"></div>
-              <NavLink className="dropdown-item" to="/category/roperos">Roperos</NavLink>
-              <div className="dropdown-divider"></div>
-              <NavLink className="dropdown-item" to="/category/sillones">Sillones</NavLink>
-              <div className="dropdown-divider"></div>
-              <NavLink className="dropdown-item" to="/category/sillas">Sillas</NavLink>
-            </div>
+      { 
+        location.pathname !== "/sale" ?
+          <div className="">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <NavLink className="nav-link" to="/">Inicio</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/company">Empresa</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/contact">Contacto</NavLink>
+              </li>
+              <div className='dropdown mx-2'>
+                <button className="btn  btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categorías
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <NavLink className="dropdown-item" to="/category/modulares">Modulares</NavLink>
+                  <div className="dropdown-divider"></div>
+                  <NavLink className="dropdown-item" to="/category/roperos">Roperos</NavLink>
+                  <div className="dropdown-divider"></div>
+                  <NavLink className="dropdown-item" to="/category/sillones">Sillones</NavLink>
+                  <div className="dropdown-divider"></div>
+                  <NavLink className="dropdown-item" to="/category/sillas">Sillas</NavLink>
+                </div>
+              </div>
+            </ul>
           </div>
-        </ul>
-      </div>
-      
+        : null
+      }      
       {
         getTotalItems(cartItemsList) > 0 && location.pathname !== "/sale" ? 
-          <div className="btn-group" style={{marginLeft: "auto"}}>
-            <div className="btn-group dropleft" role="group">
-              <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span className="sr-only"></span>
-              </button>
-              
-              <div className="dropdown-menu mt-5" style={{"marginRight": "auto"}}>
-                {
-                  cartItemsList.map(item => (
-                    <>
-                      <NavLink className="dropdown-item d-flex" key={item.id} to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
-                      <div className="dropdown-divider"></div>
-                    </>
-                  ))
-                }
-              </div>
-            </div>
+          <div className="btn-group dropstart dropleft" role="group" style={{marginLeft: "auto"}}>
+            <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span className="visually-hidden"></span>
+            </button>
+            
+            <ul className="dropdown-menu mt-5" style={{"right": "30px"}}>
+              {
+                cartItemsList.map(item => (
+                  <li>
+                    <NavLink className="dropdown-item" key={item.id} to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
+                    <div className="dropdown-divider"></div>
+                  </li>
+                ))
+              }
+            </ul>
             <Link to="/cart"  type="button" className="btn btn-secondary">
               <CartWidget />
               <span className="badge ">{

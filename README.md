@@ -5,6 +5,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## E-commerce para el proyecto de React de Coderhouse
 Curso de la plataforma de Coderhouse, de React, comisión 41590
 
+## Librerías adicionales utilizadas
+
+### react-spinners
+Se utilizó un spinner para mostrar cuando la pagina todavía no tiene la información de los productos e imágenes de las mismas listas para mostrar
+
+### react-router-dom
+Para realizar el routing y la navegación del e-commerce a traves de los distintos componentes, así como tambien para darle funcionalidad a los botones que sean links.
+
+### sweetalert2
+Se aplicó una alerta de esta librería para mostrar cuando se realiza una compra, para darle mas interactividad al usuario.
+
+### react-icons
+Algunos iconos, como el carrito, se obtuvieron a partir de esta librería.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -57,7 +57,7 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
     <>
       {
         orderSuccess ?
-          <div className="align-items-center">
+          <div className="">
             <h4 className="p-2">Felicitaciones, tu compra fue cargada.</h4>
             <h6 className="p-2 mb-4">Guarda el código de compra: <b>{orderId}</b></h6>
             <Link to="/" className="btn btn-secondary w-75" onClick={clearCart}>Volver al inicio</Link>
@@ -95,8 +95,11 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
                   placeholder="Numero de Tel." />
               </div>
             </div>
-            <input className="btn btn-primary float-right" type="submit" />
+            <input className="btn btn-primary w-100 mt-3" type="submit" />
           </form>
+          <div className="d-flex justify-content-center">
+            <Link to="/" className="btn btn-outline-danger w-25 mt-5 center">Cancelar compra</Link>
+          </div>
         </div>
       }
 
