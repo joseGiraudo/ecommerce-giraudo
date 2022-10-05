@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
       <NavLink className="navbar-brand d-inline-block align-top mx-3" to="/" onClick={location.pathname === "/sale" ? clearCart : null}>
-        <img  src={companyLogo}  height="50" width="50"  style={{borderRadius: "5px"}}alt="Company logo" />
+        <img  src={companyLogo}  height="50" width="50"  style={{borderRadius: "5px"}} alt="Company logo" />
         <p style={{display: "inline-block", marginLeft: "7px"}}>FURNITURE</p>
       </NavLink>
 
@@ -29,6 +29,9 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">Contacto</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/sale-detail">Revisar Compra</NavLink>
               </li>
               <div className='dropdown mx-2'>
                 <button className="btn  btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,8 +61,8 @@ const NavBar = () => {
             <ul className="dropdown-menu mt-5" style={{"right": "30px"}}>
               {
                 cartItemsList.map(item => (
-                  <li>
-                    <NavLink className="dropdown-item" key={item.id} to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
+                  <li key={item.id}>
+                    <NavLink className="dropdown-item" to={`/detail/${item.id}`}>{item.quantity} x {item.title}</NavLink>
                     <div className="dropdown-divider"></div>
                   </li>
                 ))

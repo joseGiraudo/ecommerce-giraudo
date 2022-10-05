@@ -3,12 +3,14 @@ import { db } from '../utils/firebase';
 import { collection, addDoc, doc, updateDoc } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { BsClipboardCheck } from 'react-icons/bs';
 
 
 const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
 
   const [ orderId, setOrderId ] = useState("");
-  const [ orderSuccess, setOrderSuccess ] = useState(false)
+  const [ orderSuccess, setOrderSuccess ] = useState(false);
+  const [ btnTitle, setBtnTitle ] = useState("Copy")
 
   const reStock = (prodList) => {
     prodList.forEach(prod => {
@@ -30,7 +32,7 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
         [e.target[3].name]: e.target[3].value
       },
       products: cartItemsList,
-      date: Date(),
+      date: new Date().toLocaleString(),
       total: totalPrice
     }
 
@@ -51,7 +53,17 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
     reStock(cartItemsList);
   }
 
-    console.log(cartItemsList);
+  const copyOrder = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(orderId);
+    setBtnTitle("Copied!")
+    /* Swal.fire({
+      icon: 'success',
+      title: 'Id copiada',
+      showConfirmButton: false,
+      timer: 1000,
+    }); */
+  }
 
   return (
     <>
@@ -59,7 +71,10 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
         orderSuccess ?
           <div className="">
             <h4 className="p-2">Felicitaciones, tu compra fue cargada.</h4>
-            <h6 className="p-2 mb-4">Guarda el código de compra: <b>{orderId}</b></h6>
+            <div className="d-inline-flex mb-4">
+              <h6 className="">Guarda el código de compra: <b>{orderId}</b></h6>
+              <button className="btn btn-outline-success mx-2" title={btnTitle} onClick={(e) => copyOrder(e)}><BsClipboardCheck /></button>
+            </div>
             <Link to="/" className="btn btn-secondary w-75" onClick={clearCart}>Volver al inicio</Link>
           </div>
         :
