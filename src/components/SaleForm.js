@@ -10,7 +10,6 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
 
   const [ orderId, setOrderId ] = useState("");
   const [ orderSuccess, setOrderSuccess ] = useState(false);
-  const [ btnTitle, setBtnTitle ] = useState("Copy")
 
   const reStock = (prodList) => {
     prodList.forEach(prod => {
@@ -56,13 +55,14 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
   const copyOrder = (e) => {
     e.preventDefault();
     navigator.clipboard.writeText(orderId);
-    setBtnTitle("Copied!")
-    /* Swal.fire({
+    Swal.fire({
       icon: 'success',
-      title: 'Id copiada',
+      text: 'Id copiada',
       showConfirmButton: false,
-      timer: 1000,
-    }); */
+      timer: 800,
+      position: 'bottom-left',
+      width: 400
+    });
   }
 
   return (
@@ -71,9 +71,9 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
         orderSuccess ?
           <div className="">
             <h4 className="p-2">Felicitaciones, tu compra fue cargada.</h4>
-            <div className="d-inline-flex mb-4">
-              <h6 className="">Guarda el código de compra: <b>{orderId}</b></h6>
-              <button className="btn btn-outline-success mx-2" title={btnTitle} onClick={(e) => copyOrder(e)}><BsClipboardCheck /></button>
+            <div className="d-flex mb-4 align-items-center">
+              <h6 className="text-bottom">Guarda el código de compra: <b>{orderId}</b></h6>
+              <button className="btn btn-outline-success mx-4" onClick={(e) => copyOrder(e)}><BsClipboardCheck /></button>
             </div>
             <Link to="/" className="btn btn-secondary w-75" onClick={clearCart}>Volver al inicio</Link>
           </div>
