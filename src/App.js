@@ -10,7 +10,6 @@ import SalesContainer from './components/SalesContainer';
 import Company from './components/Company';
 import Contact from './components/Contact';
 import CartContainer from './components/CartContainer';
-import PaginaFirebase from './components/PaginaFirebase';
 import SaleDetailContainer from './components/SaleDetailContainer';
 
 
@@ -26,12 +25,9 @@ function App() {
           <Route path="/company" element={ <Company />} />
           <Route path="/contact" element={ <Contact />} />
           <Route path="/cart" element={ <CartContainer />} />
-          <Route path='/firebase' element={ <PaginaFirebase /> } />
           <Route path="*" element={ <ItemListContainer />} />
-          
           <Route path='/sale' element={ <SalesContainer /> } />
           <Route path='/sale-detail' element={ <SaleDetailContainer /> } />
-          
         </Routes>
       </Router>
     </CartProvider>

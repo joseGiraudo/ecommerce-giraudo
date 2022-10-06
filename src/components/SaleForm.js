@@ -57,7 +57,7 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
     navigator.clipboard.writeText(orderId);
     Swal.fire({
       icon: 'success',
-      text: 'Id copiada',
+      text: 'Id de orden copiada',
       showConfirmButton: false,
       timer: 800,
       position: 'bottom-left',
@@ -71,7 +71,8 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
         orderSuccess ?
           <div className="">
             <h4 className="p-2">Felicitaciones, tu compra fue cargada.</h4>
-            <div className="d-flex mb-4 align-items-center">
+            <h6 className="p-2">Con el siguiente código, podras revisar el estado de compra:</h6>
+            <div className="d-flex mb-4 align-items-center mx-4">
               <h6 className="text-bottom">Guarda el código de compra: <b>{orderId}</b></h6>
               <button className="btn btn-outline-success mx-4" onClick={(e) => copyOrder(e)}><BsClipboardCheck /></button>
             </div>

@@ -5,7 +5,7 @@ import '../styles/Item.css';
 
 const ItemDetail = ({ item }) => {
 
-  const {id, title, price, imageUrl, description, stock} = item;
+  const {title, price, imageUrl, description, stock} = item;
 
   const { addToCart } = useContext(CartContext);
 
