@@ -39,4 +39,5 @@
 
 body {
   background-color: #aab3b0;
+  height: max-content;
 }

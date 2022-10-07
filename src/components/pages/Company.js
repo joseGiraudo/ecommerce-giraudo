@@ -1,6 +1,6 @@
 import React from 'react';
-import company from '../assets/images/company.jpg'
-import company2 from '../assets/images/company2.jpg'
+import company from '../../assets/images/company.jpg'
+import company2 from '../../assets/images/company2.jpg'
 
 const Company = () => {
   return (
@@ -14,8 +14,8 @@ const Company = () => {
         </div>
         <div className="justify-content-center">
           <div className="row p-2 mx-2">
-            <img className="card-img-bottom col-5 rounded" style={{"width": "50%"}} src={company} alt="Company card image" />
-            <img className="card-img-bottom col-5 rounded" style={{"width": "45%"}} src={company2} alt="Company card image 2" />
+            <img className="card-img-bottom col-5 rounded" style={{"width": "50%"}} src={company} alt="Company card" />
+            <img className="card-img-bottom col-5 rounded" style={{"width": "45%"}} src={company2} alt="Company card 2" />
           </div>
           <small className="text-muted col ms-5 mt-2">Imágenes de la carpintería de la empresa, donde se trabaja con maderas de alta calidad para crear los muebles con la identidad Furniture.</small>
         </div>

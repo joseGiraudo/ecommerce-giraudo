@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../../context/CartContext';
 import ItemCount from './ItemCount';
-import '../styles/Item.css';
+import '../../styles/Item.css';
 
 const ItemDetail = ({ item }) => {
 
@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
 
   return (
     <>
-      <div className='w-75 p-5'>
+      <div className="w-75 p-5" style={{"height": "100%"}}>
         <div className={`row ${stock < 1 ? "out-of-stock" : null }`}>
           <div className="col-sm-6">
             <div className="card">

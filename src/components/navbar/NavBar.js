@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import CartWidget from './CartWidget';
-import companyLogo from '../assets/images/companyLogo.jpg';
-import { CartContext } from '../context/CartContext';
+import CartWidget from '../cart/CartWidget';
+import companyLogo from '../../assets/images/companyLogo.jpg';
+import { CartContext } from '../../context/CartContext';
 
 const NavBar = () => {
 

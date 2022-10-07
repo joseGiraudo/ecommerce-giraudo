@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../../context/CartContext';
 
 const ItemCount = ({stock, initial, agregarProducto}) => {
 
@@ -27,7 +27,7 @@ const ItemCount = ({stock, initial, agregarProducto}) => {
                 <button type="button" className="btn btn-outline-success btn-sm" onClick={sumarClick} >+</button>
             
                 {
-                    contador == stock ? 
+                    contador === stock ? 
                         <div  className="alert alert-warning fade show p-1 mx-1" role="alert">
                             Solo quedan {stock} items en stock
                         </div>

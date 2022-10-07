@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SaleDetail from './SaleDetail';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../utils/firebase';
-import { useParams } from 'react-router-dom';
-import Spinner from './Spinner';
+import { db } from '../../utils/firebase';
 import { BsSearch } from 'react-icons/bs';
 
 const SaleDetailContainer = () => {

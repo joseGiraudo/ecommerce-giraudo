@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { CartProvider } from './context/CartContext';
 
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import SalesContainer from './components/SalesContainer';
-import Company from './components/Company';
-import Contact from './components/Contact';
-import CartContainer from './components/CartContainer';
-import SaleDetailContainer from './components/SaleDetailContainer';
+import NavBar from './components/navbar/NavBar';
+import ItemListContainer from './components/item/ItemListContainer';
+import ItemDetailContainer from './components/item/ItemDetailContainer';
+import SalesContainer from './components/sale/SalesContainer';
+import Company from './components/pages/Company';
+import Contact from './components/pages/Contact';
+import CartContainer from './components/cart/CartContainer';
+import SaleDetailContainer from './components/sale/SaleDetailContainer';
 
 
 function App() {

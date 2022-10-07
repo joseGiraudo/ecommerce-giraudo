@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const SaleDetail = ({ order }) => {
 
-  const { buyer, date, products, total, id } = order;
-  const { name, surname } = buyer;
+  const { buyer, date, products, total } = order;
+  const { name } = buyer;
 
   
 

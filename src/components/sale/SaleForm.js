@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { db } from '../utils/firebase';
+import { db } from '../../utils/firebase';
 import { collection, addDoc, doc, updateDoc } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -114,7 +114,7 @@ const SaleForm = ({ cartItemsList, totalPrice, clearCart }) => {
             <input className="btn btn-primary w-100 mt-3" type="submit" />
           </form>
           <div className="d-flex justify-content-center">
-            <Link to="/" className="btn btn-outline-danger w-25 mt-5 center">Cancelar compra</Link>
+            <Link to="/" className="btn btn-outline-danger w-25 mt-5 center" onClick={clearCart}>Cancelar compra</Link>
           </div>
         </div>
       }
