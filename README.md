@@ -7,6 +7,9 @@ Curso de la plataforma de Coderhouse, de React, comisión 41590
 
 ## Librerías adicionales utilizadas
 
+### Bootstrap
+Los estilos y algunas funcionalidades de botones y dropdowns del navbar se desarrollaron utilizando bootstrap.
+
 ### react-spinners
 Se utilizó un spinner para mostrar cuando la pagina todavía no tiene la información de los productos e imágenes de las mismas listas para mostrar
 
