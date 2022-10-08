@@ -5,6 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## E-commerce para el proyecto de React de Coderhouse
 Curso de la plataforma de Coderhouse, de React, comisión 41590
 
+Con el comando 'npm start', se correra el e-commerce desarrollado para el proyecto final del curso. Éste simula la tienda web de una fábrica de muebles, en la que se puede comprar artículos. Se tiene en cuenta un carrito para realizar las compras, el stock de los productos, precios y cantidades.
+Al realizar una compra, se pide al usuario que complete un formulario con datos personales, y luego se le da un código de orden de compra para que pueda revisar una simulación del estado de su compra.
+
 ## Librerías adicionales utilizadas
 
 ### Bootstrap
